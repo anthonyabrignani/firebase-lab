@@ -2,12 +2,3 @@ body {
     margin: 20px;
     background-color: #eee;
 }
-
-.ShoutoutList {
-    display: flex;
-    flex-direction: column;
-}
-
-h1 {
-    margin-left: 20px;
-}

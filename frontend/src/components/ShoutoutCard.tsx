@@ -3,9 +3,10 @@ import "./ShoutoutCard.css"
 
 interface Props {
   shout: ShoutOut;
+  onDelete: () => void;
 }
 
-function ShoutoutCard({ shout }: Props) {
+function ShoutoutCard({ shout, onDelete }: Props) {
   return (
     <div className="ShoutoutCard">
         <p>
@@ -13,6 +14,7 @@ function ShoutoutCard({ shout }: Props) {
         </p>
         <p className="From">- from {shout.from}</p>
         <p>{shout.message}</p>
+        <button onClick={onDelete}>Delete</button>
     </div>
   );
 }

@@ -1,22 +1,28 @@
 import React, { useEffect, useState, useContext } from "react";
 import ShoutOut from "../model/ShoutOut";
-import { createShout, deleteShout, readAllShouts } from "../service/ShoutoutApiService";
+import { createShout, deleteShout, readShoutsByName } from "../service/ShoutoutApiService";
 import ShoutoutCard from "./ShoutoutCard";
 import ShoutoutForm from "./ShoutoutForm";
 import { AuthContext } from "../context/auth-context";
-import { signInWithGoogle, signOut } from "../firebaseConfig";
+import { signInWithGoogle } from "../firebaseConfig";
+import { useParams } from "react-router-dom";
 
-function ShoutoutList() {
+interface RouteParams {
+  to: string
+}
+
+function ShoutoutListTo() {
   const [shouts, setShouts] = useState<ShoutOut[]>([]);
   const [shoutsLoaded, setShoutsLoaded] = useState(false);
   const { user } = useContext(AuthContext);
+  const { to } = useParams<RouteParams>();
 
   useEffect(() => {
     loadShouts();
-  }, []);
+  }, [to]);
 
   function loadShouts() {
-    readAllShouts().then((shoutsFromApi) => {
+    readShoutsByName(to).then((shoutsFromApi) => {
       setShouts(shoutsFromApi);
       setShoutsLoaded(true);
     });
@@ -31,7 +37,7 @@ function ShoutoutList() {
   }
 
   return (
-    <div className="ShoutoutList">
+    <div className="ShoutoutListTo">
       {!shoutsLoaded ? (
         <p>Loading...</p>
       ) : shouts.length === 0 ? (
@@ -50,4 +56,4 @@ function ShoutoutList() {
   );
 }
 
-export default ShoutoutList;
+export default ShoutoutListTo;
