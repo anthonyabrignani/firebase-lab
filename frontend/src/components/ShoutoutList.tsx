@@ -1,6 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
 import ShoutOut from "../model/ShoutOut";
-import { createShout, deleteShout, readAllShouts } from "../service/ShoutoutApiService";
+import {
+  createShout,
+  deleteShout,
+  readAllShouts,
+} from "../service/ShoutoutApiService";
 import ShoutoutCard from "./ShoutoutCard";
 import ShoutoutForm from "./ShoutoutForm";
 import { AuthContext } from "../context/auth-context";
@@ -32,17 +36,23 @@ function ShoutoutList() {
 
   return (
     <div className="ShoutoutList">
-      {!shoutsLoaded ? (
-        <p>Loading...</p>
-      ) : shouts.length === 0 ? (
-        <p>No Students</p>
-      ) : (
-        shouts.map((eachShout) => (
-          <ShoutoutCard key={eachShout._id} shout={eachShout} onDelete={() => handleDeleteShout(eachShout._id!)}/>
-        ))
-      )}
+      <div className="Box">
+        {!shoutsLoaded ? (
+          <p>Loading...</p>
+        ) : shouts.length === 0 ? (
+          <p>No Students</p>
+        ) : (
+          shouts.map((eachShout) => (
+            <ShoutoutCard
+              key={eachShout._id}
+              shout={eachShout}
+              onDelete={() => handleDeleteShout(eachShout._id!)}
+            />
+          ))
+        )}
+      </div>
       {!user ? (
-        <button className="signIn" onClick={signInWithGoogle}>Sign In With Google</button>
+        <button onClick={signInWithGoogle}>Sign In With Google</button>
       ) : (
         <ShoutoutForm onSubmit={handleAddShout} />
       )}

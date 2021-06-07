@@ -1,4 +1,5 @@
-import { FormEvent, useState } from "react";
+import firebase from "firebase";
+import { FormEvent, useRef, useState } from "react";
 import ShoutOut from "../model/ShoutOut";
 import "./ShoutoutForm.css";
 
@@ -10,18 +11,46 @@ function ShoutoutForm({ onSubmit }: Props) {
   const [to, setTo] = useState("");
   const [from, setFrom] = useState("");
   const [message, setMessage] = useState("");
+  const photoInputRef = useRef<HTMLInputElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   function handleSubmit(event: FormEvent): void {
     event.preventDefault();
+
     const shout: ShoutOut = {
       to: to,
       from: from,
       message: message,
     };
-    onSubmit(shout);
+
+    const files = photoInputRef.current?.files;
+    if (files && files[0]) {
+      const photoFile = files[0];
+      console.log(photoFile);
+
+      const rootFolder = firebase.storage().ref();
+      const profilePhotosFolder = rootFolder.child("profile-photos");
+      profilePhotosFolder
+        .child(photoFile.name)
+        .put(photoFile)
+        .then((snapshot) => {
+          snapshot.ref.getDownloadURL().then((url) => {
+            shout.profilePhoto = url;
+            onSubmit(shout);
+            clearForm();
+          });
+        });
+    } else {
+      onSubmit(shout);
+      clearForm();
+    }
+  }
+
+  function clearForm() {
     setTo("");
     setFrom("");
     setMessage("");
+    formRef.current?.reset();
   }
 
   return (
@@ -30,11 +59,15 @@ function ShoutoutForm({ onSubmit }: Props) {
         <h2>Leave a Shout Out</h2>
       </p>
       <p>
-        <label><h3>To:{"  "}</h3></label>
+        <label>
+          <h3>To:{"  "}</h3>
+        </label>
         <input value={to} onChange={(e) => setTo(e.target.value)} required />
       </p>
       <p>
-        <label><h3>From:{"  "}</h3></label>
+        <label>
+          <h3>From:{"  "}</h3>
+        </label>
         <input
           value={from}
           onChange={(e) => setFrom(e.target.value)}
@@ -42,8 +75,20 @@ function ShoutoutForm({ onSubmit }: Props) {
         />
       </p>
       <p>
-        <label><h3>Message:{"  "}</h3></label>
-        <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={4} required></textarea> 
+        <label>
+          <h3>Message:{"  "}</h3>
+        </label>
+        <textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          rows={3}
+          cols={50}
+          required
+        ></textarea>
+      </p>
+      <p>
+        <label>Profile Photo{"  "}</label>
+        <input type="file" ref={photoInputRef} />
       </p>
       <p>
         <button type="submit">Shout it Out!</button>

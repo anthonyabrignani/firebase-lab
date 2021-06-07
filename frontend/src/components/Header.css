@@ -2,10 +2,39 @@
     background-color: white;
     border-radius: 12px;
     border: 1px solid #999;
+    height: 50px;
+    width: 100px;
+    text-align: center;
 }
 
 .Header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    text-align: center;
+    text-shadow: 1px 1px slategrey;
+}
+
+.Header div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.Header h3 {
+    margin-right: 20px;
+    font-family: 'Rock Salt', cursive;
+}
+
+.Header img {
+    height: 50px;
+    width: 50px;
+}
+
+.Header h1 {
+    font-family: 'Rock Salt', cursive;
+    margin-left: 40px;
 }

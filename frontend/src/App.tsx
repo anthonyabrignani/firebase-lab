@@ -21,7 +21,22 @@ function App() {
               <NavLink to="/">All Shouts</NavLink>
             </li>
             <li>
-              <NavLink to="/to/Bob">Bobs Shoutouts</NavLink>
+              <NavLink to="/to/Bobby">Bobby's Shoutouts</NavLink>
+            </li>
+            <li>
+              <NavLink to="/to/Gary">Gary's Shoutouts</NavLink>
+            </li>
+            <li>
+              <NavLink to="/to/Alice">Alice's Shoutouts</NavLink>
+            </li>
+            <li>
+              <NavLink to="/to/Lang">Lang's Shoutouts</NavLink>
+            </li>
+            <li>
+              <NavLink to="/to/Mickey">Mickey's Shoutouts</NavLink>
+            </li>
+            <li>
+              <NavLink to="/to/Maria">Maria's Shoutouts</NavLink>
             </li>
           </ul>
         </nav>

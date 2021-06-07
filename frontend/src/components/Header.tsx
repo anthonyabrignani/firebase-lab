@@ -12,7 +12,7 @@ function Header() {
             { !user ? <button onClick={signInWithGoogle}>Sign In With Google</button> :
             <button onClick={signOut}>Sign Out</button>}
             { user && <div>
-                Welcome {user.displayName}!
+                <h3>Welcome {user.displayName}!</h3>
                 { !!user.photoURL && <img src={user.photoURL} alt="" />}
             </div> }
         </header>

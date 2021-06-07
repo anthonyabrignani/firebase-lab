@@ -8,6 +8,7 @@ interface Props {
 
 function ShoutoutCard({ shout, onDelete }: Props) {
   return (
+    <div className="CardBox">
     <div className="ShoutoutCard">
         <p>
         <h3>Shout out to {shout.to}</h3>
@@ -15,6 +16,7 @@ function ShoutoutCard({ shout, onDelete }: Props) {
         <p className="From">- from {shout.from}</p>
         <p>{shout.message}</p>
         <button onClick={onDelete}>Delete</button>
+    </div>
     </div>
   );
 }

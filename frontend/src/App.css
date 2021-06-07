@@ -2,3 +2,19 @@ body {
     margin: 20px;
     background-color: #eee;
 }
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: slategrey;
+    text-shadow: 1px 1px black;
+    font-family: 'Six Caps', sans-serif;
+    font-size: 3em;
+}
