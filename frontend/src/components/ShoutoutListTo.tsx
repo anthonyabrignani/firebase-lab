@@ -18,10 +18,10 @@ function ShoutoutListTo() {
   const { to } = useParams<RouteParams>();
 
   useEffect(() => {
-    loadShouts();
+    loadShouts(to);
   }, [to]);
 
-  function loadShouts() {
+  function loadShouts(to: string) {
     readShoutsByName(to).then((shoutsFromApi) => {
       setShouts(shoutsFromApi);
       setShoutsLoaded(true);
@@ -29,11 +29,11 @@ function ShoutoutListTo() {
   }
 
   function handleAddShout(shout: ShoutOut): void {
-    createShout(shout).then(loadShouts);
+    createShout(shout).then(() => loadShouts(to));
   }
 
   function handleDeleteShout(shoutId: string): void {
-    deleteShout(shoutId).then(loadShouts);
+    deleteShout(shoutId).then(() => loadShouts(to));
   }
 
   return (

@@ -4,7 +4,7 @@ import { createShout, deleteShout, readAllShouts } from "../service/ShoutoutApiS
 import ShoutoutCard from "./ShoutoutCard";
 import ShoutoutForm from "./ShoutoutForm";
 import { AuthContext } from "../context/auth-context";
-import { signInWithGoogle, signOut } from "../firebaseConfig";
+import { signInWithGoogle } from "../firebaseConfig";
 
 function ShoutoutList() {
   const [shouts, setShouts] = useState<ShoutOut[]>([]);
