@@ -9,6 +9,7 @@ ul {
     flex-direction: row;
     justify-content: space-around;
     text-decoration: none;
+    padding-right: 40px;
 }
 
 a {

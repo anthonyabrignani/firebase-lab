@@ -4,8 +4,8 @@
     margin: 20px;
     border-radius: 16px;
     position: relative;
-    left: 25%;
-    width: 50%;
+    left: 31.5%;
+    width: 30%;
 }
 
 .ShoutoutForm p {
@@ -21,7 +21,7 @@
     font-family: 'Rock Salt', cursive;
     text-decoration: underline;
     font-size: 1.3em;
-    text-shadow: 2px 2px black;
+    text-shadow: 1px 1px black;
     text-align: center;
 }
 

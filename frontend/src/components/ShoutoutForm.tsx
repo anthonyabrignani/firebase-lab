@@ -82,7 +82,7 @@ function ShoutoutForm({ onSubmit }: Props) {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           rows={3}
-          cols={50}
+          cols={60}
           required
         ></textarea>
       </p>
