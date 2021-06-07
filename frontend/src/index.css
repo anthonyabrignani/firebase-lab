@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button {
+  padding: 5px;
+  border-radius: 12px;
+  border: none;
+  font-family: 'Rock Salt', cursive;
+  text-decoration: underline;
+  font-size: 1.3em;
+  text-shadow: 1px 1px black;
+  text-align: center;
+  margin-right: 150px;
+  margin-left: 40px;
+}

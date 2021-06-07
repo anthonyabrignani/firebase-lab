@@ -8,7 +8,7 @@ function Header() {
 
     return (
         <header className="Header">
-            <h1>All Shout Outs</h1>
+            <h1>Shout Outs from Friends!</h1>
             { !user ? <button onClick={signInWithGoogle}>Sign In With Google</button> :
             <button onClick={signOut}>Sign Out</button>}
             { user && <div>

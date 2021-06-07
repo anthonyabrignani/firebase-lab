@@ -52,7 +52,7 @@ function ShoutoutList() {
         )}
       </div>
       {!user ? (
-        <button onClick={signInWithGoogle}>Sign In With Google</button>
+        <button className="ThatButton" onClick={signInWithGoogle}>Sign In With Google</button>
       ) : (
         <ShoutoutForm onSubmit={handleAddShout} />
       )}
