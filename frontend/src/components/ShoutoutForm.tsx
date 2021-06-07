@@ -54,7 +54,7 @@ function ShoutoutForm({ onSubmit }: Props) {
   }
 
   return (
-    <form className="ShoutoutForm" onSubmit={handleSubmit}>
+    <form className="ShoutoutForm" onSubmit={handleSubmit} ref={formRef}>
       <p>
         <h2>Leave a Shout Out</h2>
       </p>
