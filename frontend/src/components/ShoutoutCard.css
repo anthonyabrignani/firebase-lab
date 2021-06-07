@@ -8,7 +8,7 @@
 }
 
 .ShoutoutCard p {
-    margin-left: 20px;
+    margin-left: 70px;
     font-family: 'Boogaloo', cursive;
 }
 
@@ -22,15 +22,17 @@
     flex-wrap: wrap;
 }
 
-button {
+.ShoutoutCard button {
     padding: 5px;
     background-color: white;
     border-radius: 12px;
     border: 1px solid white;
     font-family: 'Rock Salt', cursive;
     text-decoration: underline;
-    font-size: 1.8em;
+    font-size: 1.3em;
     text-shadow: 2px 2px black;
+    text-align: center;
+    margin-left: 70px;
 }
 
 .ShoutoutCard div {
@@ -45,4 +47,9 @@ button {
 
 .ShoutoutCard h3 {
     font-family: 'Rock Salt', cursive;
+}
+
+.ShoutoutCard img {
+    height: 80px;
+    width: 100px;
 }

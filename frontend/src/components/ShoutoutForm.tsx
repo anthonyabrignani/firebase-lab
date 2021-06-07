@@ -1,7 +1,7 @@
-import firebase from "firebase";
 import { FormEvent, useRef, useState } from "react";
 import ShoutOut from "../model/ShoutOut";
 import "./ShoutoutForm.css";
+import firebase from "../firebaseConfig";
 
 interface Props {
   onSubmit: (shout: ShoutOut) => void;
@@ -87,7 +87,7 @@ function ShoutoutForm({ onSubmit }: Props) {
         ></textarea>
       </p>
       <p>
-        <label>Profile Photo{"  "}</label>
+        <label><h3>Profile Photo{"  "}</h3></label>
         <input type="file" ref={photoInputRef} />
       </p>
       <p>

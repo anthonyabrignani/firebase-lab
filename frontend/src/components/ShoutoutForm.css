@@ -5,6 +5,7 @@
     border-radius: 16px;
     position: relative;
     left: 25%;
+    width: 50%;
 }
 
 .ShoutoutForm p {
@@ -16,8 +17,12 @@
     padding: 5px;
     background-color: white;
     border-radius: 12px;
-    border: 1px solid #999;
+    border: 1px solid white;
     font-family: 'Rock Salt', cursive;
+    text-decoration: underline;
+    font-size: 1.3em;
+    text-shadow: 2px 2px black;
+    text-align: center;
 }
 
 .ShoutoutForm input {

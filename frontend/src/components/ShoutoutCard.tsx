@@ -15,6 +15,9 @@ function ShoutoutCard({ shout, onDelete }: Props) {
         </p>
         <p className="From">- from {shout.from}</p>
         <p>{shout.message}</p>
+        { !!shout.profilePhoto && <p>
+        <img src={shout.profilePhoto} alt=""/>
+      </p> }
         <button onClick={onDelete}>Delete</button>
     </div>
     </div>

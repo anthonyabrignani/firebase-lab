@@ -1,9 +1,11 @@
 .Header button {
-    background-color: white;
+    padding: 5px;
     border-radius: 12px;
-    border: 1px solid #999;
-    height: 50px;
-    width: 100px;
+    border: none;
+    font-family: 'Rock Salt', cursive;
+    text-decoration: underline;
+    font-size: 1.3em;
+    text-shadow: 2px 2px black;
     text-align: center;
 }
 
