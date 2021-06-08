@@ -1,5 +1,4 @@
 body {
-    margin: 20px;
     background-color: #eee;
 }
 
@@ -10,6 +9,10 @@ ul {
     justify-content: space-around;
     text-decoration: none;
     padding-right: 40px;
+    border-bottom: solid 2px black;
+    border-top: solid 2px black;
+    background-color: white;
+    margin: 0;
 }
 
 a {
@@ -18,4 +21,6 @@ a {
     text-shadow: 1px 1px black;
     font-family: 'Six Caps', sans-serif;
     font-size: 3em;
+    padding-left: 5px;
+    padding-right: 5px;
 }

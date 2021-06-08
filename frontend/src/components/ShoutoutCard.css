@@ -5,6 +5,7 @@
     width: 25%;
     border-radius: 16px;
     width: 250px;
+    box-shadow: 12px 12px 2px 1px rgba(33, 33, 37, 0.2);
 }
 
 .ShoutoutCard p {

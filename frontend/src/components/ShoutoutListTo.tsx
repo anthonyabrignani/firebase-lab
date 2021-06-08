@@ -46,7 +46,7 @@ function ShoutoutListTo() {
         {!shoutsLoaded ? (
           <p>Loading...</p>
         ) : shouts.length === 0 ? (
-          <p>No Students</p>
+          <p>No Shouts for Now :(</p>
         ) : (
           shouts.map((eachShout) => (
             <ShoutoutCard

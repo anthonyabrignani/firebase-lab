@@ -1,4 +1,4 @@
-.ShoutoutList button {
+.ShoutoutListTo button {
     padding: 5px;
     background-color: white;
     border-radius: 12px;
@@ -28,4 +28,8 @@
     align-content: center;
     justify-content: center;
     justify-items: center;
+}
+
+.ShoutoutListTo p {
+    font-family: 'Boogaloo', cursive;
 }

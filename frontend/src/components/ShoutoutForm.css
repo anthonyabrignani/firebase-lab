@@ -6,6 +6,7 @@
     position: relative;
     left: 31.5%;
     width: 30%;
+    box-shadow: 12px 12px 2px 1px rgba(33, 33, 37, 0.2);
 }
 
 .ShoutoutForm p {
@@ -23,6 +24,7 @@
     font-size: 1.3em;
     text-shadow: 1px 1px black;
     text-align: center;
+    margin-left: 160px;
 }
 
 .ShoutoutForm input {
